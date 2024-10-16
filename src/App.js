@@ -4,12 +4,13 @@ import ShowTask from './ShowTask';
 import AddTask from './AddTask';
 
 function App() {
-  const [Task,setTask]=useState([]);
+  const [Task, setTask] = useState([]);
   return (
     <>
-      {console.log(Task)}
-      <AddTask setTask={setTask}/>
-      <ShowTask Task={Task}/>
+      <main>
+        <AddTask setTask={setTask} />
+        <ShowTask Task={Task} />
+      </main>
     </>
   );
 }

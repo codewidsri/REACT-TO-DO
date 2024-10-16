@@ -9,19 +9,19 @@ function AddTask({ setTask }) {
     });
     const handleSubmit = (Event) => {
         Event.preventDefault()
-        setTask(addNewTask);
+        setTask((prevTasks) => [...prevTasks, addNewTask]);
     }
     const handleChange = (Event)=>{
         setNewTask({
             ...addNewTask,
-            [Event.target.name]:Event.target.value
+            [Event.target.name]:Event.target.value,
         })
     }
     return (
         <>
             <Form style={{ width: '60dvw' }} onSubmit={handleSubmit} className="mb-3">
                 <Form.Group style={{ display: "flex", justifyContent: "center" }}>
-                    <Form.Control type="text" placeholder="Enter Task" className="mx-3" name="task" onChange={handleChange}/>
+                    <Form.Control type="text" placeholder="Enter Your Task" name="task" onChange={handleChange}/>
                     <Form.Group className="mx-3">
                         <Form.Label className="fw-bold">Starting Date</Form.Label>
                         <Form.Control type="date" name="start" onChange={handleChange}/>
