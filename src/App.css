@@ -11,17 +11,21 @@ body{
     align-items: center;
     justify-content: center;
 }
-main{
-    padding: 10px;
-    height: 80dvh;
-    overflow-y: scroll;
-}
 input[type=text]{
-    font-size : 25px;
-    font-weight:bold;
+    font-size : 20px;
+}
+ul.tasks{
+    height: 50dvh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    padding: 5px;
 }
 ul.tasks li{
     list-style-type: none;
     border: 1px solid wheat;
     padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
