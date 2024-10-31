@@ -1,22 +1,26 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 function AddTask({ setTask }) {
+
     const [addNewTask,setNewTask]=useState({
             task:'',
             start: new Date().toLocaleDateString(),
             finish:'',
             completed:false
     });
+
     const handleSubmit = (Event) => {
         Event.preventDefault()
         setTask((prevTasks) => [...prevTasks, addNewTask]);
     }
+
     const handleChange = (Event)=>{
         setNewTask({
             ...addNewTask,
             [Event.target.name]:Event.target.value,
         })
     }
+
     return (
         <>
             <Form style={{ width: '50dvw' }} onSubmit={handleSubmit} className="mb-3">
@@ -28,4 +32,5 @@ function AddTask({ setTask }) {
         </>
     )
 }
+
 export default AddTask;
